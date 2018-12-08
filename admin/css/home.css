@@ -1,0 +1,50 @@
+
+img#logo{
+    height: 100px;
+    width: 300px;
+    margin-top: 10px;
+}
+nav{
+    width: 100%;
+    min-height: 30px;
+    background-color: #81bd00 ;
+    margin-top: 10px;
+}
+.nav-pills>li>a{
+    border-radius: 0px !important;
+    color: white;
+}
+.nav-pills>li>a:hover{
+    color: #428bca;
+}
+.nav-stacked>li>a{
+	color: black;
+}
+.menu_metro{
+    margin: 10px 10px 10px;
+    width: 90%;
+    height: 200px;
+    background-color: #5bc0de;
+}
+img.icon{
+    height: 120px;
+    width: 120px;
+    margin: auto;
+    padding-top: 20px;
+}
+.title_menu{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+.title{
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+}
+.contact{
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+}
