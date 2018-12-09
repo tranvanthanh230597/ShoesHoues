@@ -38,6 +38,7 @@
 		                  <th>Tên khách hàng</th>	
 		                  <th>Số điện thoại</th>	                  
 		                  <th>Địa chỉ</th>
+		                  <th>Trạng thái</th>
 		                  <th>thao tác</th>
 		                </tr>
 		              </thead>
@@ -78,8 +79,9 @@
 		              			echo '<td>'.$row['name'].'</td>';		              			
 		              			echo '<td>'.$row['phone'].'</td>';		              			
 		              			echo '<td>'.$row['address'].'</td>';		              			
+		              			echo '<td>'.$row['trangthai'].'</td>';		              			
 		              			echo '<td width=250>';
-		              			echo '<a class="btn btn-success" href="cart-update.php?id_cart='.$row["id_cart"].'">Sửa</a>';
+		              			echo '<a class="btn btn-success" href="cart-update.php?id_cart='.$row["id_cart"].'">Duyệt</a>';
 		              			echo '&nbsp;';
 		              			echo '<a class="btn btn-danger" href="cart-delete.php?id_cart='.$row["id_cart"].'">Xóa</a>';
 		              			echo '</td>';

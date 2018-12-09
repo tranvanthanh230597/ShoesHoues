@@ -125,16 +125,16 @@
 							              			echo '<br>';
 							              			echo '<a class="btn" href="cart.php?del='.$row["id_shoes"].'">Xóa</a>';
 							              			echo '</td>';		              			
-							              			echo '<td style="text-align: right;">'.number_format($row['sale_price']).'$</td>';		              					              	
+							              			echo '<td style="text-align: right;">'.$row['sale_price'].'$</td>';		              					              	
 							              			echo '<td width="100px">';
 							              			echo '<input type="text" name="qty['.$i.']" class="form-control" value="'.$_SESSION['cart'][$i]['number'].'">';
 							              			echo '</td>';	
 							              			echo '<td>';
 							              			$quantity=  $_SESSION['cart'][$i]['number'];
-							              			$id  = $_SESSION['cart'][$i]['id'];
+							              			$id_shoes  = $_SESSION['cart'][$i]['id'];
 							              			$money = $row['sale_price']* $_SESSION['cart'][$i]['number'];
 							              			$total +=$money;
-							              			echo number_format($money);
+							              			echo ($money);
 							              			echo '$</td>';		              			
 							              		echo '</tr>';
 							              	}
@@ -148,8 +148,8 @@
 						<div class="col-xs-12 col-md-12">
 							<input type='submit' class="btn btn-success btn_left" name='submit' value='Cập nhật giỏ hàng' />							
 							<div class="info_right">
-								Tổng tiền: <span class="price info_right"><?php echo number_format($total);  ?>$</span><br>
-								Tổng thanh toán: <span class="price info_right"><?php echo number_format($total);  ?>$</span> <br>
+								Tổng tiền: <span class="price info_right"><?php echo ($total);  ?>$</span><br>
+								Tổng thanh toán: <span class="price info_right"><?php echo ($total);  ?>$</span> <br>
 								(Đã gồm VAT)
 							</div>
 						</div>						
@@ -170,19 +170,19 @@
 						  </div>
 
 						  <div class="form-group">
-						    <input type="text" class="form-control" id="id_shoes" placeholder="id_shoes" name="id_shoes" value="<?php echo ($id); ?>">
-						    <input type="text" class="form-control" id="quantity" placeholder="quantity" name="quantity" value="<?php echo ($quantity); ?>">
-						    <input type="text" class="form-control" id="total" placeholder="total" name="total" value="<?php echo number_format($money); ?>">
+						    <input type="hidden" class="form-control" id="id_shoes" placeholder="id_shoes" name="id_shoes" value="<?php echo ($id_shoes); ?>">
+						    <input type="hidden" class="form-control" id="quantity" placeholder="quantity" name="quantity" value="<?php echo ($quantity); ?>">
+						    <input type="hidden" class="form-control" id="total" placeholder="total" name="total" value="<?php echo ($total); ?>">
 						  </div>
-
-						  <button type="submit" class="btn btn-lg btn-warning btn_left">Mua hàng....</button>
+							<a href=""></a>
+						  <button type="submit" class="btn btn-lg btn-warning btn_left"">Đặt hàng</button>
 						</form>
-						<div class="col-xs-12 col-md-12">
-							<a href="index.php" class="btn btn-lg btn-warning btn_left">Tiếp tục mua hàng</a>
+						
 							<?php } ?>
-						</div>
 						<?php 
 							if ($sosanpham==0) {
+								echo '<br>';
+								echo '<br>';
 								echo '<a href="index.php" class="btn btn-lg btn-warning btn_left">Quay lại cửa hàng</a>';
 							}
 															
