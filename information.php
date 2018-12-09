@@ -49,6 +49,8 @@ if ( !empty($_POST)) {
 			$q->execute(array($id_shoes,$quantity,$total,$name,$phone,$address,$trangthai));
 			Database::disconnect();
 			header("Location: information.php");
+		}else{
+			header("Location: cart.php");
 		}
 	}
 ?>

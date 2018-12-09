@@ -158,15 +158,24 @@
 						  <div class="form-group">
 						    <label for="exampleInputEmail1">Họ Và Tên(*)</label>
 						    <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Họ và Tên" name="name">
+						    <?php if (!empty($nameError)): ?>
+					      			<span class="help-inline"><?php echo $nameError;?></span>
+					      		<?php endif; ?>
 						    <small id="emailHelp" class="form-text text-muted">We'll never share your name with anyone else.</small>
 						  </div>
 						  <div class="form-group">
 						    <label for="exampleInputPassword1">Số điện thoại(*)</label>
 						    <input type="text" class="form-control" id="phone" placeholder="SDT" name="phone">
+						    <?php if (!empty($phoneError)): ?>
+					      			<span class="help-inline"><?php echo $phoneError;?></span>
+					      		<?php endif; ?>
 						  </div>
 						  <div class="form-group">
 						    <label for="exampleInputPassword1">Địa chỉ(*)</label>
 						    <input type="text" class="form-control" id="address" placeholder="Address" name="address">
+						    <?php if (!empty($addressError)): ?>
+					      			<span class="help-inline"><?php echo $addressError;?></span>
+					      		<?php endif; ?>
 						  </div>
 
 						  <div class="form-group">
