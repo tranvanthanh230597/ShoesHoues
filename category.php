@@ -1,7 +1,7 @@
 <?php include'head.php' ?>
 <?php 	
-	if ( !empty($_GET['id'])) {
-		$id = $_REQUEST['id'];
+	if ( !empty($_GET['id_sneakers'])) {
+		$id_sneakers = $_REQUEST['id_sneakers'];
 	}	
 	else {
 		header("Location: index.php");
@@ -44,7 +44,7 @@
 							}
 							$n = 4; //number product on a page
 							$vitri = ($page - 1) * $n;	
-			              	$sql1 = 'select * from sanpham where ChungLoai = '.$id;
+			              	$sql1 = 'select * from shoes where id_sneakers = '.$id_sneakers;
 			              	if($result = $pdo->query($sql1))
 							{
 							    //đếm số trang lấy được
@@ -58,7 +58,7 @@
 							    }
 							    
 							}							
-							$sql = 'select * from shoes where id_sneakers = '.$id.' ORDER BY id_shoes DESC limit '.$vitri.','.$n;
+							$sql = 'select * from shoes where id_sneakers = '.$id_sneakers.' ORDER BY id_shoes DESC limit '.$vitri.','.$n;
 							if($result1 = $pdo->query($sql))
 							{
 							    //đếm số trang lấy được
@@ -113,7 +113,7 @@
 				</div>
 					
 				<?php 
-		            	if($page>1){echo '<a class="btn btn-success" href="category.php?id='.$id.'&page='.($page-1).'">Trang trước</a>';}
+		            	if($page>1){echo '<a class="btn btn-success" href="category.php?id_sneakers='.$id_sneakers.'&page='.($page-1).'">Trang trước</a>';}
 		            	echo '&nbsp;';
 						for ($i=1 ; $i<=$pagenumber ; $i++) {
 							if ($i == $page) {
@@ -121,11 +121,11 @@
 							       echo '&nbsp;';
 							} 
 							else {
-							      echo '<a class="btn btn-info" href="category.php?id='.$id.'&page='.$i.'">'.$i.'</a>';
+							      echo '<a class="btn btn-info" href="category.php?id_sneakers='.$id_sneakers.'&page='.$i.'">'.$i.'</a>';
 							      echo '&nbsp;';
 							}
 						}
-						if($page<$pagenumber){echo '<a class="btn btn-success" href="category.php?id='.$id.'&page='.($page+1).'"">Trang sau</a>';}
+						if($page<$pagenumber){echo '<a class="btn btn-success" href="category.php?id_sneakers='.$id_sneakers.'&page='.($page+1).'"">Trang sau</a>';}
 					?>	
 			  </div>
            </div>

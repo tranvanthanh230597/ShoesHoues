@@ -46,7 +46,7 @@
 							}
 							$vitri = ($page - 1) * 5;
 			              	$pdo = Database::connect();	
-			              	$sql1 = 'select * from shoes where TenSP like "%'.$keyword.'%"';
+			              	$sql1 = 'select * from shoes where shoes_name like "%'.$keyword.'%"';
 			              	if($result = $pdo->query($sql1))
 							{
 							    //đếm số trang lấy được

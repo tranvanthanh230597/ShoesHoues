@@ -10,7 +10,7 @@
 							$pdo = Database::connect();
 							$sql = 'SELECT * FROM `sneakers` LIMIT 10';
 							foreach ($pdo ->query($sql) as $row) {
-								echo '<li><a href="category.php?id='.$row['id_sneakers'].'">'.$row['sneakers'].'</a></li>';
+								echo '<li><a href="category.php?id_sneakers='.$row['id_sneakers'].'">'.$row['sneakers'].'</a></li>';
 							}
 						?>			
 												
@@ -34,7 +34,7 @@
 					
 					<ul>
 						
-						<li><a href="#">Giới thiệu về Bookonline</a></li>
+						<li><a href="#">Giới thiệu về ShoesHouse</a></li>
 						<li><a href="#">Tuyển dụng</a></li>
 						<li><a href="#">Góc báo chí</a></li>
 						<li><a href="#">Cam kết</a></li>
