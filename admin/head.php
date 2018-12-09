@@ -30,7 +30,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Admin of SHOESHOUSE</title>
 	<meta charset="UTF-8">
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>    
  	<link rel="stylesheet" href="css/product.css"/>

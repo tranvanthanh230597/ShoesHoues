@@ -114,7 +114,7 @@
 						
 							<ul class="nav nav-pills nav-stacked">
 								<?php 							
-										$sql = 'select * from shoes ORDER BY id_shoes DESC LIMIT 4';
+										$sql = 'select * from shoes ORDER BY id_shoes DESC LIMIT 8';
 										foreach ($pdo ->query($sql) as $row) {
 											echo '<div class="col-xs-6 col-md-3 products">';
 											echo '<a href="product.php?id_shoes='.$row['id_shoes'].'" title="'.$row['shoes_name'].'">';

@@ -109,7 +109,7 @@
 						    <div class="col-sm-10">
 						      	<input type="text" class="form-control" name="shoes_name" id="inputEmail3" placeholder="Tên Giày">
 						      	<?php if (!empty($shoes_nameError)): ?>
-					      			<span class="help-inline"><?php echo $Nameshoesname_Error;?></span>
+					      			<span class="help-inline"><?php echo $shoes_nameError;?></span>
 					      		<?php endif; ?>
 						    </div>
 						  </div>

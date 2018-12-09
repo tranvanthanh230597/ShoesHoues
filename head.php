@@ -94,7 +94,7 @@
 					          </ul>
 					    </li>
 						<li><a href="index.php">Giày HOT...</a></li>		
-						<li><a href="index.php">Giày mới</a></li>					
+						<li><a href="admin">Trang quản trị</a></li>					
 			      </ul>			     
 			      <ul class="nav navbar-nav navbar-right">
 			  

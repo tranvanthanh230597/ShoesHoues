@@ -1,4 +1,29 @@
-
+<?php 
+		// keep track post values
+		$name = $_POST['name'];
+		$phone = $_POST['phone'];
+		$address = $_POST['address'];
+		$id_shoes = $_POST['id_shoes'];
+		$quantity = $_POST['quantity'];
+		$total = $_POST['total'];
+		// echo "$name";
+		// echo "$phone";
+		// echo "$address";
+		// echo "$id_shoes";
+		// echo "$quantity";
+		// echo "$total";
+		// die();
+		// validate input
+		include 'admin/database.php';
+		// 
+		$pdo = Database::connect();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$sql = "INSERT INTO cart (id_shoes,quantity,total,name,phone,address) values( ? , ?, ?, ?, ? , ?)";
+		$q = $pdo->prepare($sql);
+		$q->execute(array($id_shoes,$quantity,$total,$name,$phone,$address));
+		Database::disconnect();
+		header("Location: information.php");
+?>
 <?php include'head.php' ?>   
     <section>
         <div class="container">
@@ -24,7 +49,7 @@
 					<div class="panel-heading">NHẬP THÔNG TIN ĐẶT HÀNG</div>
 					<div class="row product_detail">
 						<div class="col-xs-12 col-md-12">
-							Quý khách vui lòng nhập thông tin đặt hàng, các thông tin (*) là bắt buộc.
+							Quý khách Đã thực hiện đặt hàng thành công.
 						</div>
 					</div>
 				</div>

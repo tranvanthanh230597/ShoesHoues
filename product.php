@@ -111,7 +111,7 @@
 											if ($row['sale_price']!=null)
 											{
 												echo '<span class="price_product">'.number_format($row['sale_price']).'$</span>';
-												echo '<span class="price_product_right">'.number_format($row['peice']).'$</span>';
+												echo '<span class="price_product_right">'.number_format($row['price']).'$</span>';
 												echo '</div>';
 												echo '<div id="product_footer">';
 												echo '<img class="img-responsive hot" src="images/icon/hot-icon.gif" alt="book online deal">';

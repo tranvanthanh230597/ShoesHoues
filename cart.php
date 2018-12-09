@@ -23,7 +23,6 @@
 			$_SESSION['cart'] = array();
 			$_SESSION['cart'][0]['id'] = $id;
 			$_SESSION['cart'][0]['number'] = 1;
-
 		}
 	}
 	//Xóa giỏ hàng
@@ -44,7 +43,6 @@
 	{
 	 foreach($_POST['qty'] as $key=>$value)
 	 {
-
 	  if(($value == 0) and (is_numeric($value)))
 	  {
 	   unset ($_SESSION['cart'][$key]);
@@ -132,7 +130,9 @@
 							              			echo '<input type="text" name="qty['.$i.']" class="form-control" value="'.$_SESSION['cart'][$i]['number'].'">';
 							              			echo '</td>';	
 							              			echo '<td>';
-							              			$money = $row['sale_price']*$_SESSION['cart'][$i]['number'];
+							              			$quantity=  $_SESSION['cart'][$i]['number'];
+							              			$id  = $_SESSION['cart'][$i]['id'];
+							              			$money = $row['sale_price']* $_SESSION['cart'][$i]['number'];
 							              			$total +=$money;
 							              			echo number_format($money);
 							              			echo '$</td>';		              			
@@ -154,11 +154,31 @@
 							</div>
 						</div>						
 						</form>
+						<form action="information.php" method="post">
+						  <div class="form-group">
+						    <label for="exampleInputEmail1">Họ Và Tên(*)</label>
+						    <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Họ và Tên" name="name">
+						    <small id="emailHelp" class="form-text text-muted">We'll never share your name with anyone else.</small>
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputPassword1">Số điện thoại(*)</label>
+						    <input type="text" class="form-control" id="phone" placeholder="SDT" name="phone">
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputPassword1">Địa chỉ(*)</label>
+						    <input type="text" class="form-control" id="address" placeholder="Address" name="address">
+						  </div>
+
+						  <div class="form-group">
+						    <input type="text" class="form-control" id="id_shoes" placeholder="id_shoes" name="id_shoes" value="<?php echo ($id); ?>">
+						    <input type="text" class="form-control" id="quantity" placeholder="quantity" name="quantity" value="<?php echo ($quantity); ?>">
+						    <input type="text" class="form-control" id="total" placeholder="total" name="total" value="<?php echo number_format($money); ?>">
+						  </div>
+
+						  <button type="submit" class="btn btn-lg btn-warning btn_left">Mua hàng....</button>
+						</form>
 						<div class="col-xs-12 col-md-12">
-							<a href="index.php" class="btn btn-lg btn-warning btn_left">Tiếp tục mua hàng</a>							
-							<div class="info_right">
-								<a href="information.php" class="btn btn-lg btn-warning">Thực hiện đặt hàng</a>
-							</div>
+							<a href="index.php" class="btn btn-lg btn-warning btn_left">Tiếp tục mua hàng</a>
 							<?php } ?>
 						</div>
 						<?php 
@@ -175,4 +195,4 @@
 
         </div>
     </section>
-	<?php include'bottom.php' ?>
+<?php include'bottom.php' ?>

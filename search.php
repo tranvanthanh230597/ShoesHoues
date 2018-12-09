@@ -44,7 +44,7 @@
 							}
 							$n = 4; //number product on a page
 							$vitri = ($page - 1) * $n;	
-			              	$sql1 = 'select * from sanpham where TenSP like "%'.$keyword.'%"';
+			              	$sql1 = 'select * from shoes where shoes_name like "%'.$keyword.'%"';
 			              	if($result = $pdo->query($sql1))
 							{
 							    //đếm số trang lấy được
@@ -58,7 +58,7 @@
 							    }
 							    
 							}							
-							$sql = 'select * from sanpham where TenSP like "%'.$keyword.'%" ORDER BY MaSP DESC limit '.$vitri.','.$n;
+							$sql = 'select * from shoes where shoes_name like "%'.$keyword.'%" ORDER BY id_shoes DESC limit '.$vitri.','.$n;
 							if($result1 = $pdo->query($sql))
 							{
 							    //đếm số trang lấy được
@@ -70,36 +70,36 @@
 							}	
 							foreach ($pdo ->query($sql) as $row) {
 								echo '<div class="col-xs-6 col-md-3 products">';
-								echo '<a href="product.php?id='.$row['MaSP'].'" title="'.$row['TenSP'].'">';
-								echo '<img class="img-responsive product" src="images/products/'.$row['HinhAnh'].'" alt="'.$row['TenSP'].'"/>';
+								echo '<a href="product.php?id_shoes='.$row['id_shoes'].'" title="'.$row['shoes_name'].'">';
+								echo '<img class="img-responsive product" src="images/products/'.$row['image'].'" alt="'.$row['shoes_name'].'"/>';
 								echo '</a>';
-								echo '<a href="product.php?id='.$row['MaSP'].'"class="title_product">';
-								if (strlen($row['TenSP'])<30)
+								echo '<a href="product.php?id_shoes='.$row['id_shoes'].'"class="title_product">';
+								if (strlen($row['shoes_name'])<30)
 								{
-									echo $row['TenSP'];
+									echo $row['shoes_name'];
 								}
 								else
 								{
-									echo substr($row['TenSP'], 0, 30).'...';
+									echo substr($row['shoes_name'], 0, 30).'...';
 								}
 								
 								echo '</a>	<br/>';
 								echo '<div id="price">';
-								if ($row['GiaKhuyenMai']!=null && $row['GiaKhuyenMai']!=0)
+								if ($row['sale_price']!=null && $row['sale_price']!=0)
 								{
-									echo '<span class="price_product">'.number_format($row['GiaKhuyenMai']).'đ</span>';
-									echo '<span class="price_product_right">'.number_format($row['Gia']).'đ</span>';
+									echo '<span class="price_product">'.number_format($row['sale_price']).'$</span>';
+									echo '<span class="price_product_right">'.number_format($row['price']).'$</span>';
 									echo '</div>';
 									echo '<div id="product_footer">';
 									echo '<img class="img-responsive hot" src="images/icon/hot-icon.gif" alt="book online deal">';
 								}
 								else
 								{
-									echo '<span class="price_product">'.number_format($row['Gia']).'đ</span>';
+									echo '<span class="price_product">'.number_format($row['price']).'$</span>';
 									echo '</div>';
 									echo '<div id="product_footer">';
 								}
-								echo '<a class="btn btn-success btn-xs add_cart" href="cart.php?id='.$row['MaSP'].'" role="button">Đặt hàng</a>';
+								echo '<a class="btn btn-success btn-xs add_cart" href="cart.php?id_shoes='.$row['id_shoes'].'" role="button">Đặt hàng</a>';
 								echo '</div>';
 								echo '</div>';
 							}
